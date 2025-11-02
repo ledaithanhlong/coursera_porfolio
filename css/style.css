@@ -110,12 +110,17 @@ h2 {
   gap: 2rem;
 }
 
+/* Giúp card cao bằng nhau và nút nằm hàng */
 .project-card {
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* giữ khoảng cách trên-dưới đều */
   transition: transform 0.3s ease;
+  min-height: 400px; /* chiều cao tối thiểu đồng đều */
 }
 
 .project-card:hover {
@@ -126,6 +131,27 @@ h2 {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 1rem;
+  object-fit: cover;
+  height: 160px;
+}
+
+/* tiêu đề và mô tả trong card */
+.project-card h3 {
+  color: #1e3a8a;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: #334155;
+  font-size: 0.95rem;
+  flex-grow: 1; /* để nội dung giãn đều */
+}
+
+/* nút trong card luôn ở cuối */
+.project-card .btn {
+  align-self: center; /* căn giữa nút theo chiều ngang */
+  margin-top: 1rem;
 }
 
 /* Skills */
@@ -158,4 +184,19 @@ footer {
   text-align: center;
   color: #475569;
   font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 3rem 5%;
+  }
+
+  .project-card {
+    min-height: auto;
+  }
 }
